@@ -1,0 +1,17 @@
+<div class="product-container">
+    <img class="product-image" src="{{ product.url }}">
+    
+    <p>{{ product.name }}</p>
+    <p>$ {{ product.price }}</p>
+
+    <form (ngSubmit)="onAddToCart()">
+        <select class="select-input" name="quantity" [(ngModel)]="quantity">
+            <option
+                *ngFor="let quantity of quantities"
+                [value]="quantity">
+                {{ quantity }}
+            </option>
+        </select>
+        <input class="submit-input" type="submit" value="Add to cart">
+    </form>
+</div>
