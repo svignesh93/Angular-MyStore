@@ -4,7 +4,9 @@ img {
 }
 
 .select-input {
+    margin-top: 5px;
     width: 108px;
+    padding: 5px;
     margin-bottom: 8px;
 }
 
@@ -21,5 +23,25 @@ img {
 }
 
 .back-link {
+    color: #33B5E5;
+    font-size: medium;
+    text-decoration: none;
     margin-top: 8px;
+}
+
+.submit-input {
+    width: 108px;
+    margin-bottom: 8px;
+    display: flex;
+    color: #fff;
+    font-size: medium;
+    padding: 5px;
+    justify-content: center;
+    border-radius: 5px;
+    border-color: #33B5E5;
+    background-color: #33B5E5;
+}
+
+h1 {
+    margin-bottom: 0px;
 }
