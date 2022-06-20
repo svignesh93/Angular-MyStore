@@ -30,17 +30,47 @@ img {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
     margin-top: 64px;
 }
 
 .cart-panel {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     margin-left: 50px;
     margin-right: 50px;
+    gap: 100px;
 }
 
 .empty-cart-message {
     display: flex;
     justify-content: center;
     margin-top: 64px;
+}
+
+.submit-input {
+    width: 108px;
+    margin-bottom: 8px;
+    display: flex;
+    color: #fff;
+    font-size: medium;
+    padding: 5px;
+    justify-content: center;
+    border-radius: 5px;
+    border-color: #33B5E5;
+    background-color: #33B5E5;
+}
+
+label {
+    display: block;
+    padding-top: 2px;
+    padding-bottom: 1px;
+}
+
+.form-input {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    margin-top: 1px;
+    margin-bottom: 1px;
 }

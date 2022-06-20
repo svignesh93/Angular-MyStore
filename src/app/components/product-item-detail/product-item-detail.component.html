@@ -1,20 +1,25 @@
 <div class="detail-container">
-    <img src="{{ product.url }}">
+  <img src="{{ product.url }}" />
 
-    <div class="detail-item">
-        <h1>{{ product.name }}</h1>
-        <p>$ {{ product.price }}</p>
-        <p>{{ product.description }}</p>
+  <div class="detail-item">
+    <h1>{{ product.name }}</h1>
+    <p>$ {{ product.price }}</p>
+    <p>{{ product.description }}</p>
 
-        <form (ngSubmit)="onAddToCart()">
-            <select class="select-input" name="product.quantity" [(ngModel)]="product.quantity">
-                <option *ngFor="let quantity of quantities" [value]="quantity">
-                    {{ quantity }}
-                </option>
-            </select>
-            <input class="submit-input" type="submit" value="Add to cart">
-        </form>
+    <form (ngSubmit)="onAddToCart()">
+      <select
+        class="select-input"
+        name="product.quantity"
+        [(ngModel)]="product.quantity">
+        <option *ngFor="let quantity of quantities" [value]="quantity">
+          {{ quantity }}
+        </option>
+      </select>
+      <input class="submit-input" type="submit" value="Add to cart" />
+    </form>
 
-        <a class="back-link" routerLink="/product"><span>&#8592;</span> Back to product list</a>
-    </div>
+    <a class="back-link" routerLink="/product">
+      <span>&#8592;</span> Back to product list
+    </a>
+  </div>
 </div>

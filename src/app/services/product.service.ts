@@ -28,7 +28,7 @@ export class ProductService {
     this.cartProducts.forEach(product => {
       totalCost += product.price * Number(product.quantity)
     });
-    return totalCost
+    return totalCost.toFixed(2)
   }
 
   addProductToCart(product: Product) {

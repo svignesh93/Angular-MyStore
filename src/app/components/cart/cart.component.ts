@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Product } from '../../models/Product';
 import { ProductService } from '../../services/product.service';
 
@@ -10,9 +11,17 @@ import { ProductService } from '../../services/product.service';
 export class CartComponent implements OnInit {
 
   cartProducts: Product[] = [];
-  totalCost: number = 0
+  totalCost: string = "0"
 
-  constructor(private productService: ProductService) { }
+  fullName: string = ""
+  address: string = ""
+  creditCardNum: string = ""
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private productService: ProductService
+  ) { }
 
   ngOnInit(): void {
     this.cartProducts = this.productService.getProductsInCart()
@@ -31,8 +40,13 @@ export class CartComponent implements OnInit {
   onQtyChange(product: Product) {
     if (product.quantity == "0") {
       this.cartProducts = this.productService.removeProductFromCart(product)
+      alert("Removed from cart!")
     } else {
       this.computeTotalCost()
     }
+  }
+
+  onSubmitForm() {
+    this.router.navigate(["checkout-confirmation"], { relativeTo: this.route });
   }
 }
