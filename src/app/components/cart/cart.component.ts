@@ -47,6 +47,11 @@ export class CartComponent implements OnInit {
   }
 
   onSubmitForm() {
-    this.router.navigate(["checkout-confirmation"], { relativeTo: this.route });
+    this.router.navigate(
+      ["checkout-confirmation"],
+      { relativeTo: this.route,
+        queryParams: {fullName: this.fullName, totalCost: this.totalCost}
+      }
+    );
   }
 }

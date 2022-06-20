@@ -12,7 +12,7 @@
             class="number-input"
             name="product.quantity"
             [(ngModel)]="product.quantity"
-            (change)="onQtyChange(product)"
+            (ngModelChange)="onQtyChange(product)"
             type="number"
             min="0"
             max="10"
