@@ -19,12 +19,29 @@ export class ProductService {
     return products.find(p => p.id == id);
   }
 
-  addToCart(product: Product) {
+  getProductsInCart(): Product[] {
+    return this.cartProducts;
+  }
+
+  getTotalCostOfProductsInCart() {
+    let totalCost = 0
+    this.cartProducts.forEach(product => {
+      totalCost += product.price * Number(product.quantity)
+    });
+    return totalCost
+  }
+
+  addProductToCart(product: Product) {
     let existingProduct = this.cartProducts.find(p => p.id == product.id);
     if (existingProduct != undefined) {
       existingProduct.quantity = existingProduct.quantity + product.quantity;
     } else {
       this.cartProducts.push(product);
     }
+  }
+
+  removeProductFromCart(product: Product) {
+    this.cartProducts = this.cartProducts.filter(p => p.id !== product.id);
+    return this.cartProducts
   }
 }
