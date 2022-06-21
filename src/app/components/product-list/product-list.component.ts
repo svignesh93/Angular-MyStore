@@ -18,4 +18,10 @@ export class ProductListComponent implements OnInit {
       this.products = res;
     });
   }
+
+  onAddToCart(product: Product) {
+    this.productService.addProductToCart(Object.assign({}, product))
+    product.quantity = 1;
+    alert("Added to cart")
+  }
 }

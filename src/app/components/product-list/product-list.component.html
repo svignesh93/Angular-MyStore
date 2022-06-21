@@ -1,3 +1,8 @@
 <div fxLayout="row" fxLayoutAlign="center" class="product-container">
-    <app-product-item fxFlexOffset="15px" *ngFor="let product of products" [product]="product"></app-product-item>
+  <app-product-item
+    fxFlexOffset="15px"
+    *ngFor="let product of products"
+    (addToCart)="onAddToCart(product)"
+    [product]="product">
+  </app-product-item>
 </div>
