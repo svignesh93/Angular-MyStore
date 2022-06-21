@@ -41,9 +41,8 @@ export class CartComponent implements OnInit {
     if (product.quantity === 0) {
       this.cartProducts = this.productService.removeProductFromCart(product)
       alert("Removed from cart!")
-    } else {
-      this.computeTotalCost()
     }
+    this.computeTotalCost()
   }
 
   onSubmitForm() {
