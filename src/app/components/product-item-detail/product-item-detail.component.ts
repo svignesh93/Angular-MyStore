@@ -12,7 +12,7 @@ export class ProductItemDetailComponent implements OnInit {
 
   id: number = 0;
   product: Product = new Product();
-  quantities: string[] = QUANTITIES;
+  quantities: number[] = QUANTITIES;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,7 +28,7 @@ export class ProductItemDetailComponent implements OnInit {
       let product = this.productService.getProductById(products, this.id);
       if (product != undefined) {
         this.product = product;
-        this.product.quantity = "1";
+        this.product.quantity = 1;
       } else {
         alert("Product not found!");
       }
@@ -37,7 +37,7 @@ export class ProductItemDetailComponent implements OnInit {
 
   onAddToCart() {
     this.productService.addProductToCart(Object.assign({}, this.product))
-    this.product.quantity = "1";
+    this.product.quantity = 1;
     alert("Added to cart")
   }
 }

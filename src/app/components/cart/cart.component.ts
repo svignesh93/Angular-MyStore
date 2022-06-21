@@ -38,7 +38,7 @@ export class CartComponent implements OnInit {
   }
 
   onQtyChange(product: Product) {
-    if (product.quantity == "0") {
+    if (product.quantity === 0) {
       this.cartProducts = this.productService.removeProductFromCart(product)
       alert("Removed from cart!")
     } else {

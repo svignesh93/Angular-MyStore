@@ -1,4 +1,4 @@
-export const QUANTITIES: string[] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+export const QUANTITIES: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 export class Product {
   id: number;
@@ -6,7 +6,7 @@ export class Product {
   price: number;
   url: string;
   description: string;
-  quantity: string;
+  quantity: number;
 
   constructor() {
     this.id = 1;
@@ -14,6 +14,6 @@ export class Product {
     this.price = 0.0;
     this.url = "";
     this.description = "";
-    this.quantity = "1";
+    this.quantity = 1;
   }
 }

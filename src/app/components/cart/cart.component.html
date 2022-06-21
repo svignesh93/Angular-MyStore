@@ -15,7 +15,7 @@
             (ngModelChange)="onQtyChange(product)"
             type="number"
             min="0"
-            max="10"
+            max="{{ product.quantity <= 10 ? 10 : product.quantity }}"
             value="{{ product.quantity }}"
           />
         </p>

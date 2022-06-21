@@ -34,7 +34,7 @@ export class ProductService {
   addProductToCart(product: Product) {
     let existingProduct = this.cartProducts.find(p => p.id == product.id);
     if (existingProduct != undefined) {
-      existingProduct.quantity = existingProduct.quantity + product.quantity;
+      existingProduct.quantity = Number(existingProduct.quantity) + Number(product.quantity);
     } else {
       this.cartProducts.push(product);
     }
